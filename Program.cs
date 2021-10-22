@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Sistema
+public class Principal
 {
     static void Main()
     {
@@ -10,12 +10,12 @@ public class Sistema
         Console.WriteLine("Ligado: " + c1.ligar());
         Console.WriteLine("Velocidade: " + c1.velocidade);
 
-        CarroGrande cg1 = new CarroGrande();
-        Console.WriteLine("Portas: " + cg1.portas);
-        Console.WriteLine("Portas fechadas: " + cg1.portasfechada);
-        Console.WriteLine("Chave: " + cg1.GetChave());
-        Console.WriteLine("Ligado: " + cg1.ligar());
-        Console.WriteLine("Velocidade: " + cg1.velocidade);
+        // CarroGrande cg1 = new CarroGrande();
+        // Console.WriteLine("Portas: " + cg1.portas);
+        // Console.WriteLine("Portas fechadas: " + cg1.portasfechada);
+        // Console.WriteLine("Chave: " + cg1.GetChave());
+        // Console.WriteLine("Ligado: " + cg1.ligar());
+        // Console.WriteLine("Velocidade: " + cg1.velocidade);
 
     }
 }
