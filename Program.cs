@@ -11,7 +11,7 @@ public class Principal
         Console.WriteLine("Velocidade Máxima:..."+Uno.GetVel_Max());
     }
 }
-public class Program //Classe Base
+public class Veiculo //Classe Base
 {
     public int Vel_Atual;
     private int Vel_Max;
