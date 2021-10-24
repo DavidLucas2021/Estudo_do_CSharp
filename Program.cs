@@ -4,44 +4,27 @@ public class Principal
 {
     static void Main()
     {
-        Carro Uno = new Carro("Uno Way",130);
-        Console.WriteLine("Nome:................"+Uno.nome);
-        Console.WriteLine("Esta ligado:........."+Uno.GetLigado());
-        Console.WriteLine("Velocidade atual:...."+Uno.Vel_Atual);
-        Console.WriteLine("Velocidade Máxima:..."+Uno.GetVel_Max());
+        Derivada2 d2 = new Derivada2();
     }
 }
-public class Veiculo //Classe Base
+public class Base
 {
-    public int Vel_Atual;
-    private int Vel_Max;
-    protected bool ligado;
-
-    public Veiculo(int Vel_Max)
+    public Base()
     {
-        Vel_Atual=0;
-        this.Vel_Max=Vel_Max;
-        ligado=false;  
+        Console.WriteLine("Construtor Base");
     }
-    public bool GetLigado()
-    {
-        return ligado;
-    }
-    public int GetVel_Max()
-    {
-        return Vel_Max;
-    }
-
 }
-public class Carro : Veiculo //Classe derivada
+public class Derivada1:Base
 {
-    public string nome;
-    public Carro(string nome, int Vel_M):base(Vel_M) 
+    public Derivada1()
     {
-        this.nome=nome;
-        ligado=true;
-        Vel_Atual=30;
+        Console.WriteLine("Construtor da classe Derivada 1");
     }
 }
-
-
+public class Derivada2:Derivada1
+{
+    public Derivada2()
+    {
+        Console.WriteLine("Construtor da classe Derivada 2");
+    }
+}
