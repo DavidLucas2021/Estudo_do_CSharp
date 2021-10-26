@@ -4,35 +4,52 @@ public class Principal
 {
     static void Main()
     {
-        Derivada2 d2 = new Derivada2();
-        d2.informacao();
+        Carro Argo  = new Carro();
+        Argo.aceleração(5);
+        Console.WriteLine("ligado;.............."+Argo.GetLigado(true));
+        Console.WriteLine("Velocidade Atual:...."+Argo.GetVel_Atual());
+        Console.WriteLine("Velocidade Atual:...."+Argo.GetVel_Max());
+        
+        
     }
 }
-public class Base
+abstract class Veiculo
 {
-    public Base()
-    {
-        Console.WriteLine("Construtor Base");
-    }
-    virtual public void informacao(){}
-}
+    protected int Vel_Max;
+    protected int Vel_Atual;
+    protected bool Ligado;
 
-public class Derivada1:Base
-{
-    public Derivada1()
+    public Veiculo()
     {
-        Console.WriteLine("Construtor da classe Derivada 1");
+        Ligado=false;
+        Vel_Atual=0;
     }
-    override public void informacao()
+    public string GetLigado(bool ligado)
     {
-        Console.WriteLine("Método virtual da classe Base na classe Drivada 1");
+        this.Ligado=ligado;
+        if(ligado == true)
+        {
+            return "sim";
+        }else return "não";
     }
+    abstract public void aceleração(int aum);
 }
-
-public class Derivada2:Derivada1
+class Carro:Veiculo
 {
-    public Derivada2()
+    public Carro()
     {
-        Console.WriteLine("Construtor da classe Derivada 2");
+        Vel_Max=110;
+    }
+    override public void aceleração(int aumentar)
+    {
+        Vel_Atual+=10*aumentar;
+    }
+    public int GetVel_Max()
+    {
+        return Vel_Max;
+    }
+       public int GetVel_Atual()
+    {
+        return Vel_Atual;
     }
 }
