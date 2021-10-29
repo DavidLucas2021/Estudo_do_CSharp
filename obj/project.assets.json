@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\Praticas C#\\Classes\\Classes.csproj",
+      "projectUniqueName": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\ESTUDOS\\Praticas C#\\Estudo do CSharp\\Classes.csproj",
       "projectName": "Classes",
-      "projectPath": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\Praticas C#\\Classes\\Classes.csproj",
+      "projectPath": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\ESTUDOS\\Praticas C#\\Estudo do CSharp\\Classes.csproj",
       "packagesPath": "C:\\Users\\SMART AUTOMAÇÃO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\Praticas C#\\Classes\\obj\\",
+      "outputPath": "C:\\Users\\SMART AUTOMAÇÃO\\Desktop\\ESTUDOS\\Praticas C#\\Estudo do CSharp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
