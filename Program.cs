@@ -4,35 +4,53 @@ public class Principal
 {
     static void Main()
     {   
-        Carro Uno = new Carro();
-        //Uno[4]=299;
-        Console.WriteLine("Velocidade Máxima:...."+Uno[4]);        
+        Uno Unoway = new Uno();
+        Console.WriteLine(Unoway.Getinformar());
+        Console.WriteLine(Unoway.Getaceleracao());        
     }
 }
-class Carro
-{
-    private int[] Vel_Max = new int[5]{100,150,230,290,330};
-    public Carro()
-    {
 
+public interface Veiculo
+{
+    void ligar();
+    void desligar();
+    void info();
+}
+public interface Carro
+{
+    void acelerar();
+}
+
+public class Uno:Veiculo,Carro
+{
+    public bool ligado;
+    public int aceleracao;
+    public string informar;
+    public Uno()
+    {
     }
-    public int this[int i]{
-        get
-        {
-            return Vel_Max[i];
-        }
-        set
-        {
-            if(value < 0)
-            {
-                Vel_Max[i]=0;
-            }else if(value > 300)
-            {
-                Vel_Max[i]=300;
-            }else
-            {
-                Vel_Max[i]=value;
-            }
-        }
+    public void ligar()
+    {
+        this.ligado=true;
+    }
+    public void desligar()
+    {
+        this.ligado=false;
+    }
+    public void info()
+    {       
+        this.informar="LIGADO";
+    }
+    public void acelerar()
+    {
+        this.aceleracao=100;
+    }
+    public string Getinformar()
+    {
+        return informar;
+    }
+    public int Getaceleracao()
+    {
+        return aceleracao;
     }
 }
