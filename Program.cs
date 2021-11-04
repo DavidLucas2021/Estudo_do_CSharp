@@ -3,54 +3,34 @@
 public class Principal
 {
     static void Main()
-    {   
-        Uno Unoway = new Uno();
-        Console.WriteLine(Unoway.Getinformar());
-        Console.WriteLine(Unoway.Getaceleracao());        
-    }
-}
+    {      
+        Carro Uno;
+        Uno.marca="Fiat";
+        Uno.modelo="Uno Way";
+        Uno.cor="Vermelho";
+        Console.WriteLine("Marca do carro............."+ Uno.marca);
+        Console.WriteLine("Marca do carro............."+ Uno.modelo);
+        Console.WriteLine("Marca do carro............."+ Uno.cor);
 
-public interface Veiculo
-{
-    void ligar();
-    void desligar();
-    void info();
-}
-public interface Carro
-{
-    void acelerar();
-}
+        Carro Mobi = new Carro("Fiat","Mobi 1","Azul");
+        Console.WriteLine("------------------------------------------------");
+        Console.WriteLine("Marca do carro............."+ Mobi.marca);
+        Console.WriteLine("Marca do carro............."+ Mobi.modelo);
+        Console.WriteLine("Marca do carro............."+ Mobi.cor);
 
-public class Uno:Veiculo,Carro
+        
+    }
+}
+struct Carro
 {
-    public bool ligado;
-    public int aceleracao;
-    public string informar;
-    public Uno()
+    public string marca;
+    public string modelo;
+    public string cor;
+
+    public Carro(string marca,string modelo,string cor)
     {
-    }
-    public void ligar()
-    {
-        this.ligado=true;
-    }
-    public void desligar()
-    {
-        this.ligado=false;
-    }
-    public void info()
-    {       
-        this.informar="LIGADO";
-    }
-    public void acelerar()
-    {
-        this.aceleracao=100;
-    }
-    public string Getinformar()
-    {
-        return informar;
-    }
-    public int Getaceleracao()
-    {
-        return aceleracao;
+        this.marca=marca;
+        this.modelo=modelo;
+        this.cor=cor;
     }
 }
