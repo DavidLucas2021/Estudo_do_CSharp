@@ -5,7 +5,7 @@ public class Principal
     static void Main()
     {
         Calculadora Calculadora = new Calculadora();
-        var resultado=Calculadora.soma(10.5,10);
+        var resultado=Calculadora.fatorial(5);
         Console.WriteLine(resultado);
     }
 }
@@ -30,5 +30,22 @@ class Calculadora
             res += num[i];
         }   
         return res;     
+    }
+    //RECURSIVIDADE=MÉTODO QUE CHAMA ELE MESMO.
+    //FATORIAL = 5! = 5*4*3*2*1 = 120
+    public int fatorial(int n)
+    {
+        int res;
+
+        if(n<1)
+        {
+            res=1;
+        }
+        else    
+        {
+            //FATORIAL = UM NÚMERO VEZES O ANTERIOR A ELE
+            res=n*fatorial(n - 1);
+        }
+        return res;
     }
 }
