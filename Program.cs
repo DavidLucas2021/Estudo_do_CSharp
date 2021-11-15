@@ -4,21 +4,35 @@ public class Principal
 {
     static void Main()
     {
-        int n1,n2,resultado;
-        resultado=n1=n2=0;
-        n1=10;
-        n2=0;
+        double area = 0;
 
         try
         {
-        resultado=n1/n2;//No momento que o bloco Try identifica o erro,ele para
-        //de executar seu trecho e pula para o Catch. Neste caso, ele não imprime a operação
-        Console.WriteLine("{0}/{1}={2}",n1,n2,resultado);
+            area = Area.Quad(10, 10);
+            Console.WriteLine("Area do Quadrado: " +area);
         }
-        catch(Exception e)//"Exception" é a classe que informa o erro, "e" objeto da classe.
+        catch (Exception e)
         {
-            Console.WriteLine("Erro: " +e.Message);
-            Console.WriteLine("Exceção: " +e.GetType());
+            Console.WriteLine("Erro: " + e.Message);
+            Console.WriteLine("Exceção: " + e.GetType());
+        }
+        finally
+        {
+            Console.WriteLine("Fim do processo.");
+        }
+    }
+}
+class Area
+{
+    public static double Quad(double bas, double alt)
+    {
+        if (bas == 0 || alt == 0)
+        {
+            throw new Exception("Base ou Altura não podem ser igual a 0.");
+        }
+        else
+        {
+        return bas * alt;
         }
     }
 }
