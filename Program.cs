@@ -5,80 +5,58 @@ using System.Collections.Generic;
     {
         public static void Main()
         {
-         Dictionary <int,string> veiculos = new Dictionary<int, string>();
-            //"add"=MÉTODO QUE ADICIONA VALORES NO DICIONÁRIO COM A CHAVE CERTA
-            veiculos.Add( 0,"uno"); 
-            veiculos.Add( 2,"doblo");
-            veiculos.Add(10,"strada");
-            veiculos.Add(12,"camaro");
-            
-            //"Remove"=MÉTODO QUE REMOVE UM ITEM DO DICIONÁRIO 
-            //veiculos.Remove(8);
+            LinkedList<string> Carros = new LinkedList<string>();
 
-            //"Clear"=MÉTODO QUE REMOVE TODOS OS ITENS DO DICIONÁRIO
-            //veiculos.Clear();
+            //"AddFirst"=MÉTODO QUE ADICIONA NO COMEÇO DA LISTA 
+            Carros.AddFirst("camaro");
+            Carros.AddFirst("mustang");
+            Carros.AddFirst("porshe");
+            Carros.AddFirst("lamborghini");
 
-            //NESTE TRECHO DO CÓDIGO É VERIFICADO SE HÁ A CHAVE ESPECIFICADA
-            //ATRAVÉS DA VARIÁVEL "chave" e do MÉTODO "ContainsKey" QUE 
-            //RETORNA TRUE QUANDO ACHA A CHAVE.
-            int chave=2;
-            Console.WriteLine("Tamanho do Dictionary: "+veiculos.Count);
-            if(veiculos.ContainsKey(chave))
+            //"AddLast"=MÉTODO QUE ADICIONA NO FIM DA LISTA
+            Carros.AddLast("skyline");
+
+            //"AddAfter"=ADICIONA APÓS UM DETERMINADO ELEMENTO
+            //"LinkedListNode"=CRIA UM NÓ NA LISTA 
+            //"FindLast"=ENCONTRA A ÚLTIMA POSIÇÃO DO ELEMENTO 
+            LinkedListNode<string>no;
+            no=Carros.FindLast("porshe");
+            //USANDO O "Next", "porshe 911" É ADICIONADO APÓS O PRÓXIMO A "porshe"
+            //QUE É O "mustang". TAMBÉM PODE SER USANDO O "Previous" PARA ADICIONAR 
+            //APÓS O ANTERIOR A "porshe" QUE É O "corvette"
+            Carros.AddAfter(no,"porshe 911");
+
+            //"AddAfter"=ADICIONA ANTES DE UM DETERMINADO ELEMENTO
+            //"FindLast"=ENCONTRA A ÚLTIMA POSIÇÃO DO ELEMENTO
+            no=Carros.FindLast("porshe");
+            Carros.AddBefore(no,"corvette");
+
+            //MÉTODO PARA LIMPAR TODA A LISTA 
+            //Carros.Clear();
+
+            //MÉTODO QUE REMOVE UM ELEMENTO DA LISTA
+            //Carros.Remove("camaro");
+
+            //MÉTODO QUE REMOVE O PRIMEIRO ELEMENTO DA LISTA 
+            //Carros.RemoveFirst();
+
+            //MÉTODO QUE REMOVE O ÚLTIMO ELEMENTO DA LISTA 
+            //Carros.RemoveLast();
+
+            //"Find"=PROCURA UM ELEMENTO NA LISTA 
+            if(Carros.Find("corvette")!=null)
             {
-                Console.WriteLine("A chave " +chave +" esta na coleção");
+                Console.WriteLine("O ELEMENTO FOI ENCONTRADO NA LISTA");
             }
             else
             {
-                Console.WriteLine("A chave " +chave +" não esta na coleção");
+                Console.WriteLine("O ELEMENTO NÃO FOI ENCONTRADO NA LISTA");
             }
 
-            //NESTE TRECHO DO CÓDIGO É VERIFICADO SE HÁ O VALOR ESPECIFICADA
-            //ATRAVÉS DA VARIÁVEL "valor" e do MÉTODO "ContainsValue" QUE 
-            //RETORNA TRUE QUANDO ACHA O VALOR.
-            string valor="camaro";
-            if(veiculos.ContainsValue(valor))
+
+            foreach(string car in Carros)
             {
-                Console.WriteLine("O valor '" +valor +"' esta na coleção");
+                Console.WriteLine(car);
             }
-            else
-            {
-                Console.WriteLine("O valor '" +valor +"' não esta na coleção");
-            }
-            
-            //NESTE TRECHO DO CÓDIGO O VALOR DA PRIMEIRA POSIÇÃO É 
-            //ALTERADO ATRAVÉS DE "veiculo[0]" SUBSTITUINDO O ANTIGO
-            //VALOR "uno".
-            veiculos[0]="argo"; //SUBSTITUIÇÃO DO VALOR="uno" PARA O VALOR="bravo"
-            valor="argo";
-            if(veiculos.ContainsValue(valor))
-            {
-                Console.WriteLine("O valor '" +valor +"' esta na coleção");
-            }
-            else
-            {
-                Console.WriteLine("O valor '" +valor +"' não esta na coleção");
-            }
-            //NESTE TRECHO DO CÓDIGO É FEITA A IMPRESSÃO DO ITENS
-            //DO DICIONÁRIO ATRAVÉS DO FOREACH USANDO O 
-            //"keiValuePair<chave,valor>" QUE DETERMINA "s" 
-            //NÃO COMO UMA VARIÁVEIL INT OU STRING, MAS COMO UMA INSTÂNCIA
-            //DO DICIONÁRIO. ASSIM É POSSÍVEL CHAMAS "s" COM 
-            //VALOR("value") OU CHAVE("key").
-            //foreach(KeyValuePair<int,string> s in veiculos)
-            //{
-            //    Console.WriteLine(s.Value);
-            //}
-            
-            //OUTRA FORMA DE IMPRIMIR TODOS OS ITENS DO DICIONÁRIO
-            //É USANDO O "Dictionary<int,string>.ValueColletion"
-            //ONDE É CRIADO UM DICIONÁRIO CHAMADO "valores" QUE RECEBE
-            //VALOR DO DICIONÁRIO "veiculo".
-            Dictionary<int,string>.ValueCollection valores=veiculos.Values;
-            
-            foreach(string s in veiculos)
-            {
-                Console.WriteLine(s);
-            }
-            
         }
     }
