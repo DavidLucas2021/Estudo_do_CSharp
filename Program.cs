@@ -5,58 +5,66 @@ using System.Collections.Generic;
     {
         public static void Main()
         {
-            LinkedList<string> Carros = new LinkedList<string>();
+            List<string> Carros = new List<string>();
+            List<string> veiculos = new List<string>();
 
-            //"AddFirst"=MÉTODO QUE ADICIONA NO COMEÇO DA LISTA 
-            Carros.AddFirst("camaro");
-            Carros.AddFirst("mustang");
-            Carros.AddFirst("porshe");
-            Carros.AddFirst("lamborghini");
+            Carros.Add("uno");
+            Carros.Add("golf");
+            Carros.Add("siena");
+            Carros.Add("punto");
 
-            //"AddLast"=MÉTODO QUE ADICIONA NO FIM DA LISTA
-            Carros.AddLast("skyline");
-
-            //"AddAfter"=ADICIONA APÓS UM DETERMINADO ELEMENTO
-            //"LinkedListNode"=CRIA UM NÓ NA LISTA 
-            //"FindLast"=ENCONTRA A ÚLTIMA POSIÇÃO DO ELEMENTO 
-            LinkedListNode<string>no;
-            no=Carros.FindLast("porshe");
-            //USANDO O "Next", "porshe 911" É ADICIONADO APÓS O PRÓXIMO A "porshe"
-            //QUE É O "mustang". TAMBÉM PODE SER USANDO O "Previous" PARA ADICIONAR 
-            //APÓS O ANTERIOR A "porshe" QUE É O "corvette"
-            Carros.AddAfter(no,"porshe 911");
-
-            //"AddAfter"=ADICIONA ANTES DE UM DETERMINADO ELEMENTO
-            //"FindLast"=ENCONTRA A ÚLTIMA POSIÇÃO DO ELEMENTO
-            no=Carros.FindLast("porshe");
-            Carros.AddBefore(no,"corvette");
-
-            //MÉTODO PARA LIMPAR TODA A LISTA 
+            //MÉTODO PARA LIMPAR TODA LISTA
             //Carros.Clear();
 
-            //MÉTODO QUE REMOVE UM ELEMENTO DA LISTA
-            //Carros.Remove("camaro");
-
-            //MÉTODO QUE REMOVE O PRIMEIRO ELEMENTO DA LISTA 
-            //Carros.RemoveFirst();
-
-            //MÉTODO QUE REMOVE O ÚLTIMO ELEMENTO DA LISTA 
-            //Carros.RemoveLast();
-
-            //"Find"=PROCURA UM ELEMENTO NA LISTA 
-            if(Carros.Find("corvette")!=null)
+            //"Contains"=MÉTODO QUE VERIFICA SE HÁ 
+            //O ELEMENTO ESPECIFICADO NA LISTA
+            if(Carros.Contains("golf"))
             {
-                Console.WriteLine("O ELEMENTO FOI ENCONTRADO NA LISTA");
+                Console.WriteLine("O ELEMENTO ESTÁ NA LISTA");
             }
             else
             {
-                Console.WriteLine("O ELEMENTO NÃO FOI ENCONTRADO NA LISTA");
+                Console.WriteLine("O ELEMENTO NÃO ESTÁ NA LISTA"); 
             }
-
-
             foreach(string car in Carros)
             {
                 Console.WriteLine(car);
             }
+
+            // "AddRange"=MÉTODO QUE É USADO PARA ADICIONAR 
+            // VÁRIOS ELEMENTOS EM UMA LISTA. NO EXEMPLO É
+            // ADICIONADO OS ELEMENTOS DA LISTA "CARROS" EM "VEICULOS" 
+            veiculos.AddRange(Carros);
+            foreach(string veiculo in veiculos)
+            {
+               Console.WriteLine(veiculo);
+            }
+
+            //OUTRA FORMA DE ADICIONAR VARIOS ELEMENTOS 
+            //NA LISTA É USANDO "AddRange" CARREGANDO UM 
+            //ARRAY COM OS ELEMENTOS ABAIXO.
+            //string[] nome_veiculos = new string[]{"celta","cobat","up","jetta","monza"};
+            //veiculos.AddRange(nome_veiculos);
+            //foreach(string veiculo in veiculos)
+            //{
+            //    Console.WriteLine(veiculo);
+            //}
+
+
+            //"CopyTo"=MÉTODO QUE COPIA DA LISTA "CARROS"
+            //PARA O ARRAY "VEICULOS" DEPOIS DA POSIÇÃO 2.
+            // Carros.CopyTo(veiculos,2);
+            // foreach(string veiculo in veiculos)
+            // {
+            //    Console.WriteLine(veiculo);
+            // }
+
+            //"IndexOf"=MÉTODO QUE RETORNA A POSIÇÃO 
+            //DO ELEMENTO ESPECIFICADO.
+            String c="golf";
+            int posição=0;
+            posição=Carros.IndexOf(c);
+            Console.WriteLine("O CARRO " +c +" ESTA NA POCIÇÃO " +posição);
+
         }
     }
